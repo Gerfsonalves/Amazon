@@ -5,6 +5,30 @@ describe('Amazon', () => {
     cy.visit('https://www.amazon.com.br/')
   })
 
+  it('Login inválido', () => {
+    cy.get('#nav-link-accountList-nav-line-1').click()
+    cy.get('#ap_email').type('Teste@gmail.com')
+    cy.get('.a-button-inner > #continue').click()
+    cy.get('#ap_password').type('12345678')
+    cy.get('#signInSubmit').click()
+  })
+
+  it('Cadastro de usúario', () => {
+    cy.get('#nav-link-accountList-nav-line-1').click()
+    cy.get('#createAccountSubmit').click()
+    cy.get('#ap_customer_name').type('José')
+    cy.get('#ap_email').type('josetestecypresspautomate@gmail.com')
+    cy.get('#ap_password').type('123654')
+    cy.get('#ap_password_check').type('123654')
+    cy.get('#continue').click()
+
+    // Inserir código recebido no email
+    //cy.get('#cvf-input-code').type('Teste')
+    // cy.get('#cvf-submit-otp-button > .a-button-inner > .a-button-input').click()
+    // Erro após prosseguir com o código de confirmação do email "Falso"
+    //cy.get('.cvf-widget-alert-id-cvf-invalid-code > .a-box-inner > .a-alert-content > .a-section').should('be.visible')
+  })
+
   it('Pesquisando, adiciona, verifica', () => {
     cy.get('#nav-search').type('Xbox Series S')
     cy.get('#nav-search-submit-button').click()
@@ -18,6 +42,4 @@ describe('Amazon', () => {
     cy.contains('R$ 3.079,00')
       .should('be.visible')
   })
-
-
 })
