@@ -4,7 +4,7 @@
  <li>Efetuar login com dados inválidos
  <hr>
  <h2>Teste 2</h2>
- <li>Efetuar cadastro do úsuario
+ <li>Efetuar cadastro do usuário
  <hr>
  <h2>Teste 3</h2>
  <li>Acessando a página
