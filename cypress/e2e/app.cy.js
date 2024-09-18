@@ -13,7 +13,7 @@ describe('Amazon', () => {
     cy.get('#signInSubmit').click()
   })
 
-  it('Cadastro de usúario', () => {
+  it('Cadastro de usuário', () => {
     cy.get('#nav-link-accountList-nav-line-1').click()
     cy.get('#createAccountSubmit').click()
     cy.get('#ap_customer_name').type('José')
