@@ -3,6 +3,7 @@
 describe('Amazon', () => {
   beforeEach('Visitar site', () => {
     cy.visit('https://www.amazon.com.br/')
+    cy.wait(1000)
   })
 
   it('Login inválido', () => {
